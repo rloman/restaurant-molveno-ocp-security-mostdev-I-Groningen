@@ -1,12 +1,22 @@
 package it.molveno.restaurant;
 
-import org.springframework.boot.SpringApplication;
+import it.molveno.restaurant.factory.DrinkFactory;
+import it.molveno.restaurant.factory.Drink;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class RestaurantApplication {
 
+//	public static void main(String[] args) {
+//		SpringApplication.run(RestaurantApplication.class, args);
+//	}
+
 	public static void main(String[] args) {
-		SpringApplication.run(RestaurantApplication.class, args);
+		Drink d = DrinkFactory.getCola();
+		d.setDescription("Colaaaaa");
+
+		System.out.println(d.getDescription());
+
+		Drink beer = DrinkFactory.getBeer();
 	}
 }
