@@ -4,7 +4,7 @@ public final class DrinkFactory {
 
     public static Drink getCola() {
 
-        Drink d = new Drink();
+        Drink d = new Cola();
         d.setDescription("Colaaaa");
 
         return d;
@@ -12,7 +12,7 @@ public final class DrinkFactory {
     }
 
     public static Drink getBeer() {
-        Drink d = new Drink();
+        Drink d = new Beer();
         d.setDescription("Beer");
 
         return d;

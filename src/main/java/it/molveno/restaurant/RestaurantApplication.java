@@ -13,7 +13,6 @@ public class RestaurantApplication {
 
 	public static void main(String[] args) {
 		Drink d = DrinkFactory.getCola();
-		d.setDescription("Colaaaaa");
 
 		System.out.println(d.getDescription());
 

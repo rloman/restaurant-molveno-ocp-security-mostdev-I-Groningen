@@ -4,17 +4,65 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Builder
+//@Builder can be used if you use and like Lombok (which are hot ... in this case they are)
 public final class Table {
 
-    private  long id; // final for a field means you cannot change the value aferwards (after the constructors)
+    private long id; // final for a field means you cannot change the value aferwards (after the constructors)
     private int numberOfSeats;
     private int tableNumber;
-
     private int price;
     private String owner;
 
     private List<LocalDateTime> reservationTimes = new ArrayList<>();
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
+    }
+
+    public int getTableNumber() {
+        return tableNumber;
+    }
+
+    public void setTableNumber(int tableNumber) {
+        this.tableNumber = tableNumber;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public List<LocalDateTime> getReservationTimes() {
+        return reservationTimes;
+    }
+
+    public void setReservationTimes(List<LocalDateTime> reservationTimes) {
+        this.reservationTimes = reservationTimes;
+    }
+
+
+    public long getId() {
+        return id;
+    }
+
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
 
 
     private Table(TableBuilder builder) {
@@ -25,24 +73,6 @@ public final class Table {
 
     }
 
-    public Table() {
-
-         String tableName = "Tafel";
-        tableName += " voor Poedels";
-
-         int counter = 0;
-        counter ++;
-        this.id = 0;
-    }
-
-    public Table(int id) {
-        this.id = id;
-    }
-
-    public Table(int tableNumber, int numberOfSeats) {
-        this(0);
-        this.numberOfSeats = numberOfSeats;
-    }
 
     public static class TableBuilder {
 
