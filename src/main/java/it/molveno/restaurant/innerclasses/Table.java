@@ -7,11 +7,6 @@ public class Table {
 
     private double price;
 
-
-
-
-
-
     private class TableLeg {
 
 

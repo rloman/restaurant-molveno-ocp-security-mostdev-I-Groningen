@@ -21,16 +21,9 @@ public class Application {
 
         BeerSize beerSize = BeerSize.LARGE;
 
-        System.out.println(beerSize.ordinal());
+		//to get the index based value 
+		int ordinalValue = beerSize.ordinal();
+        System.out.println(ordinalValue);
 
-
-
-
-        // and you might e.g. use Delegation of Control
-
-//        System.out.println(jupiler.getSize());
-
-        // reminder self: jpa @EnumValue(String)
-        // reminder self: ordinal ... values()
     }
 }

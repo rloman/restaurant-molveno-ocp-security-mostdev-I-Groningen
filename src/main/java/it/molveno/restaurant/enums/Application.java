@@ -14,6 +14,7 @@ public class Application {
 
         System.out.println(a.getNurcheringParent());
         switch (a) {
+			//remember: you are not allowed to use the enum name here (Animal)
             case SEAHORSE:
 
                 System.out.println("Animal a is a seahorse");

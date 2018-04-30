@@ -22,7 +22,8 @@ public enum BeerSize {
 }
 
 
-@Entity
+
+// @Entity
 class BeerDrinker {
 
 
