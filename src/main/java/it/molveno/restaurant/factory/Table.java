@@ -80,6 +80,7 @@ public final class Table {
         private int numberOfSeats;
         private int tableNumber;
 
+
         public TableBuilder(int id) {
 
             this.id = id;

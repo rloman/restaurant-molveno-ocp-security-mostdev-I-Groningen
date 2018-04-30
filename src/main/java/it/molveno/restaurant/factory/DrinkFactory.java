@@ -13,7 +13,7 @@ public final class DrinkFactory {
 
     public static Drink getBeer() {
         Drink d = new Beer();
-        d.setDescription("Beer");
+        d.setDescription("Car");
 
         return d;
     }
