@@ -18,7 +18,20 @@ public class Application {
         System.out.println(bigmac);
 
 
+        Cook otherCook = new Cook((n, m) -> {
 
+            n.setTemperature(180);
+            m.setTemperature(50);
+
+            n.add(m);
+
+            return n;
+
+        });
+
+        Food createdFood = otherCook.cook(one, two);
+
+        System.out.println(createdFood);
 
     }
 }
