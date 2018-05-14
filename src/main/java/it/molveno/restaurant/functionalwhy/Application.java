@@ -12,9 +12,4 @@ public class Application {
     public static void foo(Supplier<String> supplier) {
         System.out.println(supplier.get());
     }
-
-
-
 }
-
-

@@ -3,6 +3,8 @@ package it.molveno.restaurant.functionalinterface;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 public class Application {
@@ -30,8 +32,27 @@ public class Application {
             runner.run();
         }
 
+        {
+            MyRunnable r = () -> {
+                System.out.println("Groningen en Twente zijn mooi man!");
+            };
 
-        // using lambdas
+            r.run();
+
+            r = () -> {
+                System.out.println("Een andere lambda expressie over Drenthe en zo ...");
+            };
+
+            r.run();
+        }
+
+
+        List<Integer> numberList = Arrays.asList(0,1,1,2);
+
+        numberList.stream().filter(n -> n %2==0);
+
+
+       // using lambdas
         {
             MyRunnable runner = () -> System.out.println("Running using a super simple lamda expression");
         }
@@ -58,7 +79,5 @@ public class Application {
         long groupDays = daysCalculator.apply(LocalDate.of(2017, 10, 2));
 
         System.out.printf("We as a group know each oter now for '%02d' days%n", groupDays);
-
-
     }
 }
