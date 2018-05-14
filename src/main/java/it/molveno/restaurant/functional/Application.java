@@ -6,13 +6,11 @@ import java.util.function.BiFunction;
 public class Application {
 
     public static void main(String[] args) {
-//        new Thread(() -> System.out.println("jansen")).start();
 
-        // the samen
         Food one = new Food("BigMac"), two = new Food("Hamburger"), three = new Food("Bread");
         Cooker cooker = (n, m) -> {return n.add(m);};
 
-//        System.out.println(cook.cook(two, three));
+        Food result = cooker.cook(two, three);
 
         Food hamburger = cooker.cook(two, three);
         Food bigmac = cooker.cook(one, two);
