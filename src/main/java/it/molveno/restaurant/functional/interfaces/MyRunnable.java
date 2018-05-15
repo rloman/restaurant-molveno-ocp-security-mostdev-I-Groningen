@@ -1,4 +1,4 @@
-package it.molveno.restaurant.functionalinterface;
+package it.molveno.restaurant.functional.interfaces;
 
 @FunctionalInterface
 public interface MyRunnable {

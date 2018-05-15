@@ -1,4 +1,4 @@
-package it.molveno.restaurant.functionalinterface;
+package it.molveno.restaurant.functional.interfaces;
 
 
 import java.time.LocalDate;

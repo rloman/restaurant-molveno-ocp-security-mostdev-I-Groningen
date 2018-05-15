@@ -1,4 +1,4 @@
-package it.molveno.restaurant.functionalconsumers;
+package it.molveno.restaurant.functional.consumers;
 
 import java.util.Arrays;
 import java.util.List;

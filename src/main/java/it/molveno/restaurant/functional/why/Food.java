@@ -1,4 +1,4 @@
-package it.molveno.restaurant.functionalwhy;
+package it.molveno.restaurant.functional.why;
 
 import lombok.Data;
 
