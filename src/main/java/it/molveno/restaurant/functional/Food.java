@@ -10,6 +10,10 @@ public class Food {
 
     private List<Food> foods = new ArrayList<>();
 
+    public Food(double temp) {
+        this.temperature = temp;
+    }
+
     public Food(String name) {
         this.name = name;
     }
