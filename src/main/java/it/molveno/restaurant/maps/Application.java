@@ -80,13 +80,6 @@ public class Application {
 
         Stack<String> stapel = new Stack<>();
 
-
-
-
-
-
-
-
     }
 
 
