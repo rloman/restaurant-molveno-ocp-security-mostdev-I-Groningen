@@ -1,25 +1,22 @@
 package it.molveno.restaurant.bakkerij;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Voorraad {
 
-    private int voorraad;
+    private AtomicInteger voorraad = new AtomicInteger(0);
 
-    public void inc() {
-        int temp = this.voorraad;
+    public int inc() throws InterruptedException {
 
-        temp = temp +1;
-
-        this.voorraad = temp;
+        return this.voorraad.incrementAndGet();
     }
 
-    public void dec() {
+    public int dec() throws InterruptedException {
 
-        int temp = this.voorraad;
-        temp = temp -1;
-        this.voorraad = temp;
+        return this.voorraad.decrementAndGet();
     }
 
     public int getVoorraad() {
-        return this.voorraad;
+        return this.voorraad.get();
     }
 }
