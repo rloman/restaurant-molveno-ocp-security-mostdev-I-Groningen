@@ -41,6 +41,12 @@ public class CustomRecursiveActionRemainderOperatorExercise extends RecursiveAct
 
     private void processing(String work) {
         String result = "";
+        for (int i = 0; i < work.length(); i++) {
+            int element = Integer.parseInt("" + work.charAt(i));
+            if (element % 2 == 0) {
+                System.out.println(element);
+            }
+        }
 
         ...
 
