@@ -1,4 +1,4 @@
-package it.molveno.restaurant.threads.recursiveaction;
+package it.molveno.restaurant.threads.recursiveaction.demo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,15 +8,13 @@ import java.util.List;
 import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveAction;
 
-public class CustomRecursiveAction extends RecursiveAction {
-
-    private static final Logger logger = LoggerFactory.getLogger(CustomRecursiveAction.class);
+public class CustomRecursiveActionString extends RecursiveAction {
 
     private String workload = "";
-    private static final int THRESHOLD = 4;
+    private static final int THRESHOLD = 2;
 
 
-    public CustomRecursiveAction(String workload) {
+    public CustomRecursiveActionString(String workload) {
         this.workload = workload;
     }
 
@@ -29,21 +27,21 @@ public class CustomRecursiveAction extends RecursiveAction {
         }
     }
 
-    private List<CustomRecursiveAction> createSubtasks() {
-        List<CustomRecursiveAction> subtasks = new ArrayList<>();
+    private List<CustomRecursiveActionString> createSubtasks() {
+        List<CustomRecursiveActionString> subtasks = new ArrayList<>();
 
         String partOne = workload.substring(0, workload.length() / 2);
         String partTwo = workload.substring(workload.length() / 2, workload.length());
 
-        subtasks.add(new CustomRecursiveAction(partOne));
-        subtasks.add(new CustomRecursiveAction(partTwo));
+        subtasks.add(new CustomRecursiveActionString(partOne)); //1
+        subtasks.add(new CustomRecursiveActionString(partTwo)); //2
 
         return subtasks;
     }
 
     private void processing(String work) {
         String result = work.toUpperCase();
-        System.err.println(("This result - (" + result + ") - was processed by "
+        System.out.println(("This result - (" + result + ") - was processed by "
                 + Thread.currentThread().getName()));
     }
 }
