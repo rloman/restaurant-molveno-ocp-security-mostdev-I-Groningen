@@ -22,12 +22,13 @@ public class FileBasics {
 
     public static void formatting() throws FileNotFoundException {
 
-        final String footballFormatString = "%-23s - %-23s -> %02d-%02d%n";
+        final String footballFormatString = "%-23s - %-23s :: %2d-%2d%n";
 
         PrintWriter writer = new PrintWriter(new File("footballresults.txt"));
 
         writer.printf(footballFormatString, "Heracles", "Ajax", 2,0);
         writer.printf(footballFormatString, "Feyenoord", "FC Den Haag", 10,3);
+        writer.printf(footballFormatString, "Telstar", "FC TWente", 10,14);
 
         writer.flush();
         writer.close();
