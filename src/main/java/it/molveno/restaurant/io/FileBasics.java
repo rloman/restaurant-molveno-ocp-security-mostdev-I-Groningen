@@ -4,17 +4,16 @@ import java.io.*;
 
 public class FileBasics {
 
+    private static final String FILENAME = "zoo.txt";
+
     public static void main(String[] args) throws IOException {
-        createAndWriteFile("zoo.txt");
+        createAndWriteFile(FILENAME);
 
-        readFile("zoo.txt");
+        readFile(FILENAME);
 
-        // the printing part
-
-        // PrintWriter
         printToFile();
 
-//        readfromConsole();
+//        readfromConsole(); // TIP Run with jar since Eclipse and Intellij fail since it is not having access to console
 
         formatting();
     }
@@ -22,11 +21,6 @@ public class FileBasics {
 
     public static void createAndWriteFile(String filename) {
         File zoo = new File(filename);
-
-//        assert zoo.exists() :"File should not exist yet";
-
-        //unable to write yet?
-        // we will fix that now
 
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(zoo));
@@ -48,8 +42,9 @@ public class FileBasics {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             reader.lines().forEach(System.out::println);
-//            reader.reset(); // else the below part would not run
             reader.lines().forEach(n -> {
+
+                assert false : "Should never come here since stream is used";
                 System.out.println("In the second for each");
                 System.out.println(n);
             });
@@ -57,7 +52,6 @@ public class FileBasics {
             long lines = reader.lines().count();
 
             assert 0 == lines : "Lines should be 0 here since reader is read ... ";
-            System.out.println(lines);
 
             reader = new BufferedReader(new FileReader(file)); // create new reader over file
 
@@ -113,7 +107,5 @@ public class FileBasics {
 
         writer.flush();
         writer.close();
-
     }
-
 }
