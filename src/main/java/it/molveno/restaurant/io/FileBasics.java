@@ -103,7 +103,7 @@ public class FileBasics {
 
     public static void formatting() throws FileNotFoundException {
 
-        final String footballFormatString = "%-23s - %-23s :: %2d-%2d%n";
+        final String footballFormatString = "%-23s - %-23s  %2d - %2d%n";
 
         PrintWriter writer = new PrintWriter(new File("footballresults.txt"));
 
