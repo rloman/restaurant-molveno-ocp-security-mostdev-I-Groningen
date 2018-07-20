@@ -1,6 +1,5 @@
 package it.molveno.restaurant.io;
 
-import javax.sound.midi.Soundbank;
 import java.io.*;
 
 public class FileBasics {
@@ -18,47 +17,6 @@ public class FileBasics {
 //        readfromConsole();
 
         formatting();
-    }
-
-    public static void formatting() throws FileNotFoundException {
-
-        final String footballFormatString = "%-23s - %-23s :: %2d-%2d%n";
-
-        PrintWriter writer = new PrintWriter(new File("footballresults.txt"));
-
-        writer.printf(footballFormatString, "Heracles", "Ajax", 2,0);
-        writer.printf(footballFormatString, "Feyenoord", "FC Den Haag", 10,3);
-        writer.printf(footballFormatString, "Telstar", "FC TWente", 10,14);
-
-        writer.flush();
-        writer.close();
-
-    }
-
-    public static void printToFile() throws FileNotFoundException {
-        PrintWriter writer = new PrintWriter(new File("output.log"));
-
-        writer.println("The quick brown fox");
-        writer.println("drinks some beer together");
-        writer.println("with the lazy dog.");
-
-        writer.flush();
-        writer.close();
-    }
-
-    public static void readfromConsole() throws IOException {
-
-        Console console = System.console();
-        // this console will be null when run in Eclipse / IntelliJ
-        if (console != null) {
-            String userInput = console.readLine();
-            console.writer().println("You entered the following in Console: " + userInput);
-        }
-        else {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            String userInput = reader.readLine();
-            System.out.println("You entered the following in oldWay: "+userInput);
-        }
     }
 
 
@@ -117,4 +75,45 @@ public class FileBasics {
             e.printStackTrace();
         }
     }
+
+    public static void readfromConsole() throws IOException {
+
+        Console console = System.console();
+        // this console will be null when run in Eclipse / IntelliJ
+        if (console != null) {
+            String userInput = console.readLine();
+            console.writer().println("You entered the following in Console: " + userInput);
+        } else {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            String userInput = reader.readLine();
+            System.out.println("You entered the following in oldWay: " + userInput);
+        }
+    }
+
+    public static void printToFile() throws FileNotFoundException {
+        PrintWriter writer = new PrintWriter(new File("output.log"));
+
+        writer.println("The quick brown fox");
+        writer.println("drinks some beer together");
+        writer.println("with the lazy dog.");
+
+        writer.flush();
+        writer.close();
+    }
+
+    public static void formatting() throws FileNotFoundException {
+
+        final String footballFormatString = "%-23s - %-23s :: %2d-%2d%n";
+
+        PrintWriter writer = new PrintWriter(new File("footballresults.txt"));
+
+        writer.printf(footballFormatString, "Heracles", "Ajax", 2, 0);
+        writer.printf(footballFormatString, "Feyenoord", "FC Den Haag", 10, 3);
+        writer.printf(footballFormatString, "Telstar", "FC TWente", 10, 14);
+
+        writer.flush();
+        writer.close();
+
+    }
+
 }
