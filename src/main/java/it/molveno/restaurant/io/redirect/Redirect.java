@@ -10,6 +10,11 @@ public class Redirect {
 
     public static void main(String[] args) throws IOException {
 
+        redirectToByteArrayOutputStream();
+        redirectToLogfile();
+    }
+
+    public static void redirectToByteArrayOutputStream() throws IOException {
         // save current stdout
         console = System.out;
 
@@ -36,20 +41,29 @@ public class Redirect {
         // validate some
         assert output.contains("This should be in baos");
 
+    }
+
+    public static void redirectToLogfile() throws FileNotFoundException {
+
+        // create a file
         File consoleOut = new File("output.log");
 
+        // create a printer (to log file)
         PrintStream printer = new PrintStream(consoleOut);
 
+        // redirect stdout to the printer
         System.setOut(printer);
 
-        for(int i = 0;i<3;i++) {
-            System.out.println("This should be in a regular file called output.log");
+        // create some printable data
+        for (int i = 1; i < 4; i++) {
+            System.out.printf("This should be in a regular file called output.log line %d%n", i);
         }
 
-        System.setOut(console);
-
+        // close
         printer.flush();
         printer.close();
 
+        // reset
+        System.setOut(console);
     }
 }
