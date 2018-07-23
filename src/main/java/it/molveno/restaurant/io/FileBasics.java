@@ -41,7 +41,11 @@ public class FileBasics {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
+
+            // this is the only working
             reader.lines().forEach(System.out::println);
+
+            // this should not come in the forEach
             reader.lines().forEach(n -> {
 
                 assert false : "Should never come here since stream is used";
@@ -58,7 +62,6 @@ public class FileBasics {
             String line;
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
-
             }
 
 
@@ -78,7 +81,8 @@ public class FileBasics {
             String userInput = console.readLine();
             console.writer().println("You entered the following in Console: " + userInput);
         } else {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            // apparently I am in Eclipse or IntelliJ
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); // System.in is stdin
             String userInput = reader.readLine();
             System.out.println("You entered the following in oldWay: " + userInput);
         }
@@ -103,7 +107,11 @@ public class FileBasics {
 
         writer.printf(footballFormatString, "Heracles", "Ajax", 2, 0);
         writer.printf(footballFormatString, "Feyenoord", "FC Den Haag", 10, 3);
-        writer.printf(footballFormatString, "Telstar", "FC TWente", 10, 14);
+        writer.printf(footballFormatString, "Telstar", "FC Twente", 10, 14);
+
+        String formattedLine = String.format(footballFormatString, "Heracles", "Ajax", 2, 0);
+
+        System.out.println(formattedLine);
 
         writer.flush();
         writer.close();
