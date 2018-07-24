@@ -29,12 +29,19 @@ public class NIO2 {
 
         File file = footballResults.toFile(); // for legacy use for Java IO ...
 
+        assert file != null : "File should be not null here!";
+
     }
 
     private static void iterateOverPath() throws IOException {
         Path footballResults = Paths.get("footballresults.txt");
 
         final List<String> lines = Files.readAllLines(footballResults);
+
+       Files.readAllLines(footballResults).stream()
+               .filter( l -> l.contains("Heracles"))
+               .map(s -> s.toUpperCase())
+               .forEach(System.out::println);
 
         lines.forEach(System.out::println);
     }
@@ -70,22 +77,25 @@ public class NIO2 {
 
     private static void iterateOverDirectoryAndDirectories() throws IOException {
 
-        // list all java files
+        // list all java files in a certain directory
 
         Path src = Paths.get("src/main/java");
 
         System.out.println(src.toAbsolutePath());
 
+        // iterate over files in directory
         // one level deep ... hence nothing ...
         Files.list(src)
                 .filter(p -> !Files.isDirectory(p))
                 .map(p -> p.toAbsolutePath())
+                .filter(p -> p.endsWith(".java"))
                 .peek(n -> {
-                    assert false : "Should not be here since not expected java files in this src/main/java dir";
+                     assert false : "Should not be here since not expected java files in this src/main/java dir";
                 })
                 .forEach(System.out::println);
 
-        // deep(er)
+
+        // deep(er) recursively iterate over files and subdirectories
         Files.walk(src)
                 .filter(p -> !Files.isDirectory(p))
                 .map(p -> p.toAbsolutePath())

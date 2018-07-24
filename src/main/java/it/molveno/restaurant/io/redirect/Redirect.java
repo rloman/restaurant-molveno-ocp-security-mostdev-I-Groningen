@@ -45,6 +45,8 @@ public class Redirect {
 
     public static void redirectToLogfile() throws FileNotFoundException {
 
+        console = System.out;
+
         // create a file
         File consoleOut = new File("output.log");
 

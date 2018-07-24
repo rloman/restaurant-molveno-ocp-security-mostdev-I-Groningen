@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Bakker implements Runnable, Serializable {
 
-    private  transient Voorraad voorraad = new Voorraad();
+    private Voorraad voorraad = new Voorraad();
 
     public Bakker(Voorraad voorraad) {
         this.voorraad = voorraad;
