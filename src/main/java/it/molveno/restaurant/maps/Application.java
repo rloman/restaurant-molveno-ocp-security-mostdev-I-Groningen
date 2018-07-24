@@ -1,7 +1,5 @@
 package it.molveno.restaurant.maps;
 
-import it.molveno.restaurant.sorting.Bird;
-
 import java.util.*;
 
 public class Application {

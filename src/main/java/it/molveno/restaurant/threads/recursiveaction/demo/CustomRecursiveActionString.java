@@ -1,8 +1,5 @@
 package it.molveno.restaurant.threads.recursiveaction.demo;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ForkJoinTask;

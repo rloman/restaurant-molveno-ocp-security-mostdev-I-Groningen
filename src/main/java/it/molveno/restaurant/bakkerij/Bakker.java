@@ -1,8 +1,10 @@
 package it.molveno.restaurant.bakkerij;
 
-public class Bakker implements Runnable {
+import java.io.Serializable;
 
-    private Voorraad voorraad;
+public class Bakker implements Runnable, Serializable {
+
+    private Voorraad voorraad = new Voorraad();
 
     public Bakker(Voorraad voorraad) {
         this.voorraad = voorraad;
