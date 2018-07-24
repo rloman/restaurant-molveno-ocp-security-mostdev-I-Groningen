@@ -15,13 +15,7 @@ public class JavaFilesDirectoryTreeVisitor extends SimpleFileVisitor<Path> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JavaFilesDirectoryTreeVisitor.class);
 
-    private final String javaExtentie = "java";
-
-    private String projectBaseDir;
-
-    public JavaFilesDirectoryTreeVisitor(String projectBaseDir) {
-        this.projectBaseDir = projectBaseDir;
-    }
+    private static final String javaExtentie = "java";
 
 
     @Override

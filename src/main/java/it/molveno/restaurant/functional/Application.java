@@ -1,7 +1,6 @@
 package it.molveno.restaurant.functional;
 
 
-import java.util.Arrays;
 import java.util.function.*;
 
 public class Application {

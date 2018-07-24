@@ -1,6 +1,5 @@
 package it.molveno.restaurant.enums.beers;
 
-import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
