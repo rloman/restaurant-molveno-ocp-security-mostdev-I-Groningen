@@ -17,6 +17,7 @@ public class Application {
             Files.walkFileTree(start, walker);
         } catch (IOException e) {
             System.err.println("Jammer dan ...");
+
         }
     }
 }
