@@ -1,0 +1,9 @@
+Create a Consumer class which buys one bread
+Create an Application class with a main method
+
+Instantiate five Bakkers which create two breads
+
+So in the end we have 5x2 = 10 broodjes made
+And we have 10x1 = 10 broodjes gekocht
+
+dus saldo van de voorraad is dan 0 ...
