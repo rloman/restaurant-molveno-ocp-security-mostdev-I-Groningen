@@ -15,9 +15,18 @@ public class VisitorDemoApp {
 
         Visitor v = new CountingVisitor();
 
-        mand.accept(v);
+//        mand.accept(v);
+
+        for(Fruit f : mand) {
+            f.accept(v);
+        }
+
+        mand.stream().forEach(System.out::println);
 
         System.out.println(v);
+
+        v = new XMLPrintingVisitor();
+        mand.accept(v);
 
     }
 }
