@@ -9,10 +9,8 @@ public class Fruitmand extends Fruit implements Iterable<Fruit> {
 
     private List<Fruit> content = new ArrayList<>();
 
-    public /* synchronized*/ void add(Fruit f) {
-        synchronized (content) {
+    public void add(Fruit f) {
             this.content.add(f);
-        }
     }
 
 

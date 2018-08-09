@@ -11,5 +11,14 @@ public class PeekTrainer {
         numberList.stream().filter(n -> n > 2).peek(n -> {
             System.out.println("Intermediate result is: "+n);
         }).forEach(System.out::println);
+
+		// remember from this that if you do not end a stream with a so called TERMINAL operator
+		// the stream() method and the next (filter) is never invoked
+
+		// so this will not run
+ 	numberList.stream().filter(n -> n > 2).peek(n -> {
+            System.out.println("Intermediate result is: "+n);
+        });
+		
     }
 }

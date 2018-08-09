@@ -1,33 +1,10 @@
 package it.molveno.restaurant.maps;
 
-import it.molveno.restaurant.model.Food;
-
 import java.util.*;
 
 public class Application {
 
     public static void main(String[] args) {
-
-
-        Food p = new Food(2);
-
-        System.out.println(p);
-
-        String label = ""+p;
-
-        Food p2 = new Food(3);
-
-
-        List<Food> foods = new LinkedList<>();
-
-        foods.add(p);
-        foods.add(p2);
-
-        foods.remove(p);
-
-        System.out.println(foods);
-
-
 
         /*
         Set<Integer> set = new TreeSet<>();

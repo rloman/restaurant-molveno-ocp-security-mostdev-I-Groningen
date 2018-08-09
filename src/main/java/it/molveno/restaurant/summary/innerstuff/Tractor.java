@@ -7,7 +7,7 @@ public class Tractor {
     private String bougie;
 
 
-    public static class TractorBuilder {
+    public static class TractorBuilder { // example of an static inner class (builder pattern)
 
         // builder pattern hier implementeren ...
 
